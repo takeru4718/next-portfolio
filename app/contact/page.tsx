@@ -1,3 +1,4 @@
+import BackHomeButton from '../components/BackHomeButton'
 
 export const metadata={
     title: "コンタクト",
@@ -9,6 +10,7 @@ const Contact=()=>{
         <>
             <div className="wrapper py-28 pb-40">
                 <div className="container mx-auto px-6 lg:max-w-3xl lg:px-0">
+                    <BackHomeButton label="ホームに戻る" href="/"/>
                     <h1 className="font-medium text-4xl mb-0">Contact</h1>
                     <p>お気軽にご連絡ください</p>
                     <form action="https://formspree.io/f/xoqgnjoy" method="POST">

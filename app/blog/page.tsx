@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Pagination from "../components/pagination"
 import {getAllBlogs, blogsPerPage} from "../utils/mdQueries"
+import BackHomeButton from "../components/BackHomeButton"
 
 export const metadata = {
     title:"ブログ",
@@ -15,8 +16,9 @@ const Blog=async()=>{
         <>
             <div className="wrapper py-28 pb-40">
                 <div className="container mx-auto px-6 lg:max-w-3xl lg:px-0">
+                    <BackHomeButton label="ホームに戻る" href="/"/>
                     <h1 className="font-medium text-4xl mb-0">Blog</h1>
-                    <p>工学部大学生の日常生活をお届けします</p>
+                    <p>工学科大学院生の日常生活をお届けします</p>
                     {limitedBlogs.map((blog,index)=>
                         <div key={index} className="blogCard grid grid-cols-1 md:grid-cols-2 items-center color-inherit mt-20 shadow-lg md:grid-cols-1">
                             <div className="cardContainer px-2 pb-8">

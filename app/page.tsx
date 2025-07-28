@@ -1,78 +1,70 @@
-import Link from 'next/link'
+import Link from "next/link"
 import Image from "next/image"
-import profilePic from "/public/images/profile.jpg"
-import heroPic from "/public/images/gausu2.png"
 
-export const metadata={
-  title: "Hiragi Takeru",
-  description: "Hiragi Takeruのポートフォリオサイトです"
-}
-
-export default function Home(){
-  return(
-    <>
-      <div className="hero text-center relative">
-        <Image className="max-h-350 w-full object-cover" src={heroPic} alt="hero" />
-        <div className="textContainer absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white bg-gray-500 bg-opacity-80 px-6 md:px-8 py-4 rounded-md md:text-center md:w-96 lg:w-120 xl:w-96 lg:p-4 lg:pb-6">
-          <h1 className="text-4xl md:text-2xl lg:text-4xl font-medium mb-2">平木 尊</h1>
-          <h3 className="text-3xl md:text-2xl lg:text-3xl font-medium m-0">ポートフォリオ</h3>
+export default function Home() {
+  return (
+    <section className="min-h-screen bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 flex items-center justify-center px-6">
+      <div className="max-w-4xl bg-white bg-opacity-90 backdrop-blur-md rounded-3xl shadow-2xl p-12 flex flex-col md:flex-row items-center gap-12">
+        {/* 左の写真 */}
+        <div className="relative flex-shrink-0 w-56 h-56 rounded-full overflow-hidden shadow-lg border-8 border-white">
+          <Image
+            src="/images/irasuto_profile.png"
+            alt="Profile"
+            fill
+            className="object-cover"
+          />
         </div>
-     </div>
 
-     
-     <div className="container mx-auto px-4 md:px-10 lg:px-64 ">
-     {/* className="profile py-10 md:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center" */}
-      <div className="profile py-10 md:py-16 lg:py-20 grid justify-items-center md:grid-cols-2 gap-10 items-center">
-        <div className="text-center md:text-left md:w-80 lg:w-auto">
-          <h2 className="text-3xl md:text-4xl font-medium mb-4">Web Developer(予定)</h2>
-          <p className="text-base md:text-lg">
-            はじめまして!関西大学 システム理工学部 電気電子情報工学科に在籍している平木 尊です。
-            学業の傍ら、アルバイトでweb系のプログラミングに携わっています(予定)。
-            プログラミングは私の趣味でもあり、技術を磨くために日々勉強しています。
-            また、ゲームや読書、スポーツ観戦も大好きで、多様な趣味を持っています。
-            新しいプロジェクトに取り組むことに情熱を持ち、常に成長し続けることを目指しています。
-            どうぞよろしくお願いします!
+        {/* 右のテキスト */}
+        <div className="text-center md:text-left max-w-xl">
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4 drop-shadow-md">
+            平木 尊
+          </h1>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            関西大学大学院　理工学研究科所属．  
+            グラフ最適化について研究しています．
+            Webプログラミングやスクレイピングやります．
+            お肉食べるために，コード書いてます．
           </p>
-        </div>
-        <div>
-          <Image className="w-full h-72 md:h-96 object-cover" src={profilePic} alt="hero" />
-        </div>
-      </div>
 
-      <div className="skills py-10 md:py-16 lg:py-10">
-        <h2 className="text-center mb-8 md:mb-14 font-medium text-2xl md:text-3xl lg:text-4xl">Skills</h2>
-        <div className="skillsContainer py-10 grid grid-cols-2 md:grid-cols-2 gap-y-12 md:gap-x-8">
-          <div className="flex items-center gap-4 font-medium ">
-            <img className="w-24" src="/images/javascript.svg" alt="javascript"/>
-            <span>JavaScript / 1 years</span>
-          </div>
-          <div className="flex items-center gap-4 font-medium">
-            <img className="w-24" src="/images/react.svg" alt="react"/>
-            <span>React / 3 months</span>
-          </div>
-          <div className="flex items-center gap-4 font-medium">
-            <img className="w-24" src="https://skillicons.dev/icons?i=c&theme=light" alt="gatsby"/>
-            <span>C / 3 years</span>
-          </div>
-          <div className="flex items-center gap-4 font-medium">
-            <img className="w-24" src="/images/next.svg" alt="next"/>
-            <span>Next.JS / 1 month</span>
-          </div>
-          <div className="flex items-center gap-4 font-medium">
-            <img className="w-24" src="https://skillicons.dev/icons?i=typescript&theme=light" alt="next"/>
-            <span>typescript / 1 month</span>
-          </div>
-          <div className="flex items-center gap-4 font-medium">
-            <img className="w-24" src="https://skillicons.dev/icons?i=python&theme=light" alt="next"/>
-            <span>python / 1 year</span>
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            {/* 有効なリンク */}
+            <Link
+              href="/scraping"
+              className="px-6 py-2 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition"
+            >
+              スクレイピング
+            </Link>
+
+            {/* 無効ボタンたち */}
+            <div className="flex flex-wrap gap-4">
+              {["Webサイト", "アプリ開発", "研究", "趣味"].map((label, idx) => (
+                <div key={idx} className="relative group">
+                  <button
+                    disabled
+                    className="px-6 py-2 bg-gray-300 text-gray-600 rounded-full shadow cursor-not-allowed opacity-50"
+                  >
+                    {label}
+                  </button>
+                  {/* ボタンだけのhoverに限定 */}
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 rounded bg-pink-200 text-pink-900 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                    💡 Coming Soon!
+                  </div>
+                </div>
+              ))}
+            </div>
+
+
+
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 transition"
+            >
+              お問い合わせ
+            </Link>
           </div>
         </div>
       </div>
-      <div className="ctaButton py-10 text-center">
-        <Link href="contact" className="inline-block my-10 px-12 py-3 bg-red-500 rounded-full text-white hover:opacity-80 text-decoration-none">お問い合わせ</Link>
-      </div>
-    </div>
-
-    </>
-  )
+    </section>
+  );
 }
