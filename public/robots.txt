@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://next-portfolio-peach-pi.vercel.app
+
+# Sitemaps
+Sitemap: https://next-portfolio-peach-pi.vercel.app/sitemap.xml
