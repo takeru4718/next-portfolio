@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import BackHomeButton from '../components/BackHomeButton';
+import Image from 'next/image';
 import { getSlugs, getBySlug } from '../utils/mdScraping';
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function ScrapingPortfolio() {
       title: frontmatter.title,
       description: frontmatter.description,
       tech: frontmatter.tech || [],
+      image: frontmatter.image || null,
     };
   });
 
@@ -36,6 +38,19 @@ export default function ScrapingPortfolio() {
                   {project.title}
                 </h2>
               </Link>
+
+              {project.image && (
+                <div className="mb-4">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title}の画像`}
+                    width={300}
+                    height={180}
+                    className="rounded-lg object-cover"
+                  />
+                </div>
+              )}
+
               <p className="text-gray-700 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech: string) => (
