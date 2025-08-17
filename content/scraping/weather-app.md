@@ -11,6 +11,8 @@ image: /images/weather-app.png
 
 ## 概要
 
+[GitHub リポジトリはこちら](https://github.com/takeru4718/weather-app)
+
 都市名を入力すると、現在の気温と天気を表示するWebアプリです。  
 シンプルなUIで、知りたい都市の天候をすぐに確認できます。
 

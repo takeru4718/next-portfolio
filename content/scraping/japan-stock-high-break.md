@@ -12,6 +12,8 @@ image: /images/japan-stock-high-break.png
 
 ## 概要
 
+[GitHub リポジトリはこちら](https://github.com/takeru4718/japan-stock-high-break)
+
 このツールは Python を用いて [株探](https://kabutan.jp) から銘柄データをスクレイピングし、  
 条件に合致する新高値銘柄を抽出します。
 
