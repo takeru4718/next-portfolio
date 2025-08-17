@@ -10,6 +10,9 @@ image: /images/japan-stock-high-break.png
 
 ![新高値ブレイク投資銘柄取得ツール](/images/japan-stock-high-break.png)
 
+## 背景
+新高値ブレイク投資法は、株価が過去52週の最高値を更新した銘柄を購入し、さらなる上昇を狙う戦略です。高値を更新する銘柄は、往々にして好材料を背景に上昇しており、その勢いに乗ることで利益を狙います。そこで、新高値を付けた瞬間に銘柄を自動取得するため、このツールを開発しました。
+
 ## 概要
 
 [GitHub リポジトリはこちら](https://github.com/takeru4718/japan-stock-high-break)
