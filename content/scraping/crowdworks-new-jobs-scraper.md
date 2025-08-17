@@ -12,6 +12,10 @@ image: /images/crowdworks-scraper.png
 
 ![CrowdWorks 新着案件スクレイパー](/images/crowdworks-scraper.png)
 
+## 背景
+CrowdWorksの案件は募集人数に対して応募が多数のため、非常に高倍率です。
+そこで、ライティングや開発など特定カテゴリの新着案件を素早く検知し、真っ先に応募することで契約獲得のチャンスを広げることを目的に、このスクレイパーを開発しました。
+
 ## 概要
 
 [GitHub リポジトリはこちら](https://github.com/takeru4718/crowdworks-new-jobs-scraper)
